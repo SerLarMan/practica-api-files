@@ -1,0 +1,23 @@
+{
+  "name": "practica-api-files",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "SerLarMan",
+  "description": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js",
+    "seed": "node ./src/utils/seeds/actor.seed.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "cloudinary": "^1.41.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0"
+  }
+}
