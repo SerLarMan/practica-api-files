@@ -13,5 +13,7 @@ const movieRouter = require("express").Router();
 movieRouter.get("/", getMovies);
 movieRouter.get("/:id", getMovieById);
 movieRouter.post("/", upload.single("img"), addMovie);
-movieRouter.get("/:id", updateMovie);
-movieRouter.get("/:id", deleteMovie);
+movieRouter.put("/:id", updateMovie);
+movieRouter.delete("/:id", deleteMovie);
+
+module.exports = movieRouter;

@@ -1,4 +1,5 @@
 const Movie = require("../models/Movie");
+const { deleteCloudinary } = require("../../utils/deleteCloudinary");
 
 const getMovies = async (req, res, next) => {
   try {
@@ -29,7 +30,7 @@ const addMovie = async (req, res, next) => {
     }
 
     const movieDB = await movie.save();
-    res.status(201).json(movieDB);
+    res.status(200).json(movieDB);
   } catch (error) {
     return next(error);
   }
@@ -54,7 +55,8 @@ const deleteMovie = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    await Movie.findByIdAndDelete(id);
+    const movie = await Movie.findByIdAndDelete(id);
+    deleteCloudinary(movie.img);
     return res.status(200).json("Movie deleted");
   } catch (error) {
     next(error);
