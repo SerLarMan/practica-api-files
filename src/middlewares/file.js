@@ -5,7 +5,7 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "Practica API-Files",
+    folder: "Practica_API-Files",
     allowedFormats: ["jpg", "png", "jpeg", "gif", "webp"],
   },
 });

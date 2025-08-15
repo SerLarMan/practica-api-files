@@ -1,21 +1,21 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-const Actor = require("../../api/models/Actor");
-const actors = require("../../data/actors");
+const Album = require("../api/models/Album");
+const albums = require("../data/albums");
 
 mongoose
   .connect(process.env.DB_URL)
   .then(async () => {
-    let allActors = await Actor.find();
+    let allAlbums = await Album.find();
 
-    if (allActors.length) {
-      await Actor.collection.drop();
+    if (allAlbums.length) {
+      await Album.collection.drop();
     }
   })
   .catch((error) => console.log(error))
   .then(async () => {
-    await Actor.insertMany(actors);
-    console.log("Actors added");
+    await Album.insertMany(albums);
+    console.log("Albums added");
   })
   .catch((error) => console.log(error))
   .finally(() => mongoose.disconnect());
