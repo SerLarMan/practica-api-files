@@ -53,7 +53,7 @@ A continuación se listaran las rutas y los endpoints para poder interactuar con
 ### Author
 
 ```sh
-127.0.0.1:3000/orders
+127.0.0.1:3000/authors
 ```
 
 | Método | Ruta | Cuerpo | Descripción |
@@ -61,9 +61,10 @@ A continuación se listaran las rutas y los endpoints para poder interactuar con
 | GET | / | | Obtiene todos los author |
 | GET | /:id | | Obtiene el author seleccionada por la id |
 | POST | / | Objeto Author | Crea un author nuevo |
-| PUT | /:id | Objeto Authir | Actualiza un author por su id |
+| PUT | /:id | Objeto Author | Actualiza un author por su id |
 | DELETE | /:id | | Borra un authir por su id |
 
 ## Licencia
+
 
 MIT
